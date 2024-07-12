@@ -24,35 +24,30 @@ In the walkthrough below, I detail many of the steps I took to configure Active 
 - <b>Windows 10 Pro</b>
 - <b>VMware Workstation Pro</b>
 
+<h2>Contents</h2>
+
+[1. Setting up the virtual machines](#1-setting-up-the-virtual-machines)<br />
+[2. Configuring the domain controller's NICs](#2-configuring-the-domain-controllers-nics)<br />
+[3. Installing Active Directory Domain Services](#3-installing-active-directory-domain-services)<br />
+[4. Creating a domain](#4-creating-a-domain)<br />
+[5. Creating an admin user](#5-creating-an-admin-user)<br />
+[6. Installing and configuring RAS](#6-installing-and-configuring-ras)<br />
+[7. Installing and configuring DHCP](#7-installing-and-configuring-dhcp)<br />
+[8. Programmatically creating 1,000 sample users](#8-programmatically-creating-1000-sample-users)<br />
+[9. Configuring the domain client](#9-configuring-the-domain-client)<br />
+[10. Testing connectivity](#10-testing-connectivity)<br />
+[Next steps](#next-steps)<br />
+
 <h2>Walkthrough</h2>
 
-<!--
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
---!>
+<h3>1. Setting up the virtual machines</h3>
+<h3>2. Configuring the domain controller's NICs</h3>
+<h3>3. Installing Active Directory Domain Services</h3>
+<h3>4. Creating a domain</h3>
+<h3>5. Creating an admin user</h3>
+<h3>6. Installing and configuring RAS</h3>
+<h3>7. Installing and configuring DHCP</h3>
+<h3>8. Programmatically creating 1,000 sample users</h3>
+<h3>9. Configuring the domain client</h3>
+<h3>10. Testing connectivity</h3>
+<h3>Next steps</h3>
