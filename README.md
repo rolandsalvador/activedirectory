@@ -63,6 +63,8 @@ The internal NIC originally had a 169.254.196.xxx link-local address, indicating
 <img src="https://i.imgur.com/D6H3fNc.png"/>
 On both NICs, the DNS server address set to the loopback address, 127.0.0.1, because the domain controller will act as the DNS server.
 
+[Back to top](#active-directory-home-lab)
+
 <h3>3. Installing Active Directory Domain Services</h3>
 After figuring out which NIC is which, I installed Active Directory Domain Services through the Add Roles and Features menu. Since I already have the domain set up, it appears in the list like this. However, “DomainController” was the option available upon initial setup.
 <br />
@@ -73,17 +75,23 @@ Afterwards, I selected the ADDS role from the list.
 <br />
 <img src="https://i.imgur.com/BOCWNF9.png"/>
 
+[Back to top](#active-directory-home-lab)
+
 <h3>4. Creating a domain</h3>
 Post-installation, I was prompted by Server Manager to promote this machine to a domain controller and create the domain. I selected “Add a new forest” and configured the name as “mydomain.com”
 <br />
 <br />
 <img src="https://i.imgur.com/bdi0gSC.png"/>
 
+[Back to top](#active-directory-home-lab)
+
 <h3>5. Creating an admin user</h3>
 In the Active Directory Users and Computers menu, I added an organizational unit named “_ADMINS” and created the “a-rsalvador” user as a member of the Domain Admins group. From this point on, I’ll be using this admin user to log into the domain controller instead of the actual administrator account.
 <br />
 <br />
 <img src="https://i.imgur.com/BG5DE16.png"/>
+
+[Back to top](#active-directory-home-lab)
 
 <h3>6. Installing and configuring RAS</h3>
 Next, I installed and configured RAS using the Add Roles and Features menu. This will let our client computer access the internet. When selecting “Remote Access,” “DirectAccess and VPN (RAS)” and “Routing” are automatically selected too.
@@ -94,6 +102,8 @@ I opened the Routing and Remote Access menu to use the setup wizard. Here we can
 <br />
 <br />
 <img src="https://i.imgur.com/VKtPrlO.png"/>
+
+[Back to top](#active-directory-home-lab)
 
 <h3>7. Installing and configuring DHCP</h3>
 Afterwards, I installed the DHCP server role. This enables the domain controller to lease IP addresses to the client computers.
@@ -109,6 +119,8 @@ The scope, or list of leasable addresses, that I selected ranges from 172.16.0.1
 <br />
 <img src="https://i.imgur.com/jTciWaN.png"/>
 
+[Back to top](#active-directory-home-lab)
+
 <h3>8. Programmatically creating 1,000 sample users</h3>
 In this step, I programmatically created 1,000 sample users in my domain. The script was graciously provided by Josh Madakor in his Active Directory
 <a href="https://www.youtube.com/watch?v=MHsI8hJmggI"> setup video</a>. Each user is created with a randomly generated name taken from a text file. In addition, I created a user named "rsalvador" for my own login to the client computer later.
@@ -119,6 +131,8 @@ After running the script, we can see that there are a lot of users in the databa
 <br />
 <br />
 <img src="https://i.imgur.com/qbkx0Ws.png"/>
+
+[Back to top](#active-directory-home-lab)
 
 <h3>9. Configuring the domain client</h3>
 I fired up the client computer, and the first thing I did was add it to the mydomain.com domain through Advanced System settings. I named the computer "CLIENT1."
@@ -134,6 +148,8 @@ The default gateway is set to 172.16.0.1, which is the domain controller’s vir
 <br />
 <img src="https://i.imgur.com/hDQk8Ls.png"/>
 
+[Back to top](#active-directory-home-lab)
+
 <h3>10. Testing connectivity</h3>
 Finally, I tested the connectivity of the client computer. Back on the domain controller, we can now see “CLIENT1” in the Active Directory Users and Computers menu. Additionally, we can see the 172.16.0.101 IP address lease in the DHCP menu.
 <br />
@@ -144,6 +160,8 @@ Back on the client computer, I pinged google.com to test internet connectivity. 
 <br />
 <img src="https://i.imgur.com/EY5yUyd.png"/>
 
+[Back to top](#active-directory-home-lab)
+
 <h3>Next steps</h3>
 That concludes my basic setup of Active Directory in a virtualized environment! 
 <br />
@@ -152,3 +170,7 @@ There’s a lot more things that I want to do with this lab to expand it further
 <br />
 <br />
 I had fun working on this project, so I want to continue learning about Active Directory. If you’ve made it this far, thank you again for taking a look!
+<br />
+<br />
+
+[Back to top](#active-directory-home-lab)
