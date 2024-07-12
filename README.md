@@ -1,14 +1,12 @@
 <h1>Active Directory Home Lab</h1>
 
 <h2>Description</h2>
-In this lab, I configured Active Directory Domain Services, a domain controller, and a client computer. The domain controller acts as a DHCP server for the virtual machine subnet, VMnet0. The client computer acts as a DHCP client for the doamin controller. The domain controller also contains a NIC for public use to connect to the internet. The network topology is seen below:
+In this lab, I configured Active Directory Domain Services, a domain controller, and a client computer. The domain controller acts as a DHCP server for the virtual machine subnet, VMnet0. The domain controller also contains a NIC for public use to connect to the internet. The network topology is seen below. Thank you for taking a look!
 
 <br />
 <br />
 <p align="center">
 <img src="https://i.imgur.com/vCcndHL.png" height="50%" width="50%"/>
-
-In the walkthrough below, I detail the steps I took to configure Active Directory for the domain controller and client. Thank you for taking a look!
 
 <h2>Skills Used</h2>
 
@@ -41,7 +39,7 @@ In the walkthrough below, I detail the steps I took to configure Active Director
 <h2>Walkthrough</h2>
 
 <h3>1. Setting up the virtual machines</h3>
-The domain controller (DC) is a Windows Server 2019 machine. Two NICs are configured on it, one NAT for internet connection, and one internal for VMnet0.
+The domain controller is a Windows Server 2019 machine. Two NICs are configured on it, one NAT for internet connection, and one internal for VMnet0.
 <br />
 <br />
 <img src="https://i.imgur.com/GngsHag.png"/>
@@ -62,6 +60,8 @@ The internal NIC originally had a 169.254.196.xxx link-local address, indicating
 <br />
 <img src="https://i.imgur.com/D6H3fNc.png"/>
 On both NICs, the DNS server address set to the loopback address, 127.0.0.1, because the domain controller will act as the DNS server.
+<br />
+<br />
 
 [Back to top](#active-directory-home-lab)
 
@@ -70,7 +70,7 @@ After figuring out which NIC is which, I installed Active Directory Domain Servi
 <br />
 <br />
 <img src="https://i.imgur.com/Pzk3C1n.png"/>
-Afterwards, I selected the ADDS role from the list.
+Afterwards, I selected the Active Directory Domain Services role from the list.
 <br />
 <br />
 <img src="https://i.imgur.com/BOCWNF9.png"/>
