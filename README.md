@@ -1,4 +1,4 @@
-<h1>Active Directory Home Lab</h1>
+<h1>Active Directory Domain Services Home Lab</h1>
 
 <h2>Description</h2>
 In this lab, I configured Active Directory Domain Services, a domain controller, and a client computer. The domain controller acts as a DHCP server for the virtual machine subnet, VMnet0. The domain controller also contains a NIC for public use to connect to the internet. The network topology is seen below. Thank you for taking a look!
@@ -48,7 +48,7 @@ The domain client is a Windows 10 Pro machine. Only an internal VMnet0 NIC is co
 <br />
 <img src="https://i.imgur.com/mvj6j9j.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>2. Configuring the domain controller's NICs</h3>
 Originally, the external NIC on the domain controller had “Obtain an IP address automatically” chosen in the settings, indicating that it’s the NAT interface. This IP address will be used to connect to the internet, and my physical home router will assign the address.
@@ -63,7 +63,7 @@ On both NICs, the DNS server address set to the loopback address, 127.0.0.1, bec
 <br />
 <br />
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>3. Installing Active Directory Domain Services</h3>
 After figuring out which NIC is which, I installed Active Directory Domain Services through the Add Roles and Features menu. Since I already have the domain set up, it appears in the list like this. However, “DomainController” was the option available upon initial setup.
@@ -75,7 +75,7 @@ Afterwards, I selected the Active Directory Domain Services role from the list.
 <br />
 <img src="https://i.imgur.com/BOCWNF9.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>4. Creating a domain</h3>
 Post-installation, I was prompted by Server Manager to promote this machine to a domain controller and create the domain. I selected “Add a new forest” and configured the name as “mydomain.com”
@@ -83,7 +83,7 @@ Post-installation, I was prompted by Server Manager to promote this machine to a
 <br />
 <img src="https://i.imgur.com/bdi0gSC.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>5. Creating an admin user</h3>
 In the Active Directory Users and Computers menu, I added an organizational unit named “_ADMINS” and created the “a-rsalvador” user as a member of the Domain Admins group. From this point on, I’ll be using this admin user to log into the domain controller instead of the actual administrator account.
@@ -91,7 +91,7 @@ In the Active Directory Users and Computers menu, I added an organizational unit
 <br />
 <img src="https://i.imgur.com/BG5DE16.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>6. Installing and configuring RAS</h3>
 Next, I installed and configured RAS using the Add Roles and Features menu. This will let our client computer access the internet. When selecting “Remote Access,” “DirectAccess and VPN (RAS)” and “Routing” are automatically selected too.
@@ -103,7 +103,7 @@ I opened the Routing and Remote Access menu to use the setup wizard. Here we can
 <br />
 <img src="https://i.imgur.com/VKtPrlO.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>7. Installing and configuring DHCP</h3>
 Afterwards, I installed the DHCP server role. This enables the domain controller to lease IP addresses to the client computers.
@@ -119,7 +119,7 @@ The scope, or list of leasable addresses, that I selected ranges from 172.16.0.1
 <br />
 <img src="https://i.imgur.com/jTciWaN.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>8. Programmatically creating 1,000 sample users</h3>
 In this step, I programmatically created 1,000 sample users in my domain. The script was graciously provided by Josh Madakor in his Active Directory
@@ -132,7 +132,7 @@ After running the script, we can see that there are a lot of users in the databa
 <br />
 <img src="https://i.imgur.com/qbkx0Ws.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>9. Configuring the domain client</h3>
 I fired up the client computer, and the first thing I did was add it to the mydomain.com domain through Advanced System settings. I named the computer "CLIENT1."
@@ -148,7 +148,7 @@ The default gateway is set to 172.16.0.1, which is the domain controller’s vir
 <br />
 <img src="https://i.imgur.com/hDQk8Ls.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>10. Testing connectivity</h3>
 Finally, I tested the connectivity of the client computer. Back on the domain controller, we can now see “CLIENT1” in the Active Directory Users and Computers menu. Additionally, we can see the 172.16.0.101 IP address lease in the DHCP menu.
@@ -160,7 +160,7 @@ Back on the client computer, I pinged google.com to test internet connectivity. 
 <br />
 <img src="https://i.imgur.com/EY5yUyd.png"/>
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
 
 <h3>Next steps</h3>
 That concludes my basic setup of Active Directory in a virtualized environment! 
@@ -173,4 +173,4 @@ I had fun working on this project, so I want to continue learning about Active D
 <br />
 <br />
 
-[Back to top](#active-directory-home-lab)
+[Back to top](#active-directory-domain-services-home-lab)
